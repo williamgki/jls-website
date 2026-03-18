@@ -1,0 +1,373 @@
+Delivered-To: williamgkirby@gmail.com
+Received: by 2002:a05:7110:6451:b0:2f4:5a2b:4d93 with SMTP id b17csp281034gee;
+        Sat, 7 Mar 2026 08:49:47 -0800 (PST)
+X-Received: by 2002:a05:600c:4e43:b0:475:ddad:c3a9 with SMTP id 5b1f17b1804b1-48526759b11mr106672435e9.13.1772902187129;
+        Sat, 07 Mar 2026 08:49:47 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1772902187; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Y8DCW5S2JTjX8xnZub845r3idL/S2EmGPG7Vg0bIrztYYprqjV4AQqfhph6LX2V84N
+         ShgwPG6zFNGKn68BrCBaCu1cJYUQLgMf+beekNrLO0PBAZzUByUmkfnEwdPQHcyl6TZg
+         qL/9bJEQCkiIhNGdzk26Na4npy/CI0C/1nLW7nHrN7K7gKQCiQm4q4lcgdhmAFwqGbjU
+         0xo8fWqS5eII7xwmccQBpaPx5EoxCAZ6SWmK+WkH4sJzigsiLDIk5qLmql3WGxr+dgs5
+         jf4BAi21WTm0WTCft/S3D4DPSsvpxKtPHUkNnfQnwyYCxfwSU1vFHmMiWNvdSBYdk5zI
+         7WKA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:subject:references:in-reply-to:message-id:cc:to:from
+         :date:dkim-signature;
+        bh=5DKDp5x7/8JxBHlh1HSJ/S7tatng6TJPxBFkQMN7Y+U=;
+        fh=sPbMfRMXNvLRWmxktRyia+ZDIVZFj7a+/muKyuHDDDs=;
+        b=SHlj77W10tFJGggYjvJ9/W6xPaF8qIQU9Zuz7PCC/fpGmo1ugFfkiqEEvv1lASYoEd
+         1px+CXmmxHc6ps78wgXlmYfNZVu5iJOv/AEJyJvgx8ugBEmF9X1JTfnM5tU1l6En288D
+         thFM2CwJixSppeWCwZogMdb9+TSQWyC86OJ/V3PTn8Vp2aMxxsx4uZFYwFRzkG/bBcVo
+         GQcCQT0Bm55hdPPbuLot8tZd1OvgZUV8Fc8Q8B8GZZS4A+cqfrvbZ0Oyy5EgbqK9T9Op
+         Mi15ba1MygIyWByiBUDRb3oRE6WTgydHxcc5OX/WSTjDYHeRJgOyfoa7TcJcLrrXMwdM
+         NU7A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@yahoo.co.uk header.s=s2048 header.b=IGCCoHHX;
+       spf=pass (google.com: domain of mdmacleod1@yahoo.co.uk designates 77.238.179.83 as permitted sender) smtp.mailfrom=mdmacleod1@yahoo.co.uk;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.co.uk
+Return-Path: <mdmacleod1@yahoo.co.uk>
+Received: from sonic309-25.consmr.mail.ir2.yahoo.com (sonic309-25.consmr.mail.ir2.yahoo.com. [77.238.179.83])
+        by mx.google.com with ESMTPS id 5b1f17b1804b1-4851fadf89asi178774555e9.6.2026.03.07.08.49.46
+        for <williamgkirby@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 07 Mar 2026 08:49:47 -0800 (PST)
+Received-SPF: pass (google.com: domain of mdmacleod1@yahoo.co.uk designates 77.238.179.83 as permitted sender) client-ip=77.238.179.83;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@yahoo.co.uk header.s=s2048 header.b=IGCCoHHX;
+       spf=pass (google.com: domain of mdmacleod1@yahoo.co.uk designates 77.238.179.83 as permitted sender) smtp.mailfrom=mdmacleod1@yahoo.co.uk;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.co.uk
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.co.uk; s=s2048; t=1772902186; bh=5DKDp5x7/8JxBHlh1HSJ/S7tatng6TJPxBFkQMN7Y+U=; h=Date:From:To:Cc:In-Reply-To:References:Subject:From:Subject:Reply-To; b=IGCCoHHX+2kTMk3sOemzbRzG9wqQpZCn+/w1iJ2s0MT5rPXH9u0Eddy7rEL69zlzVH2oAkJUkGruMKLkGmlTwdzDQS89m/5nPYTP4aSnlUzzJHoksTlkxSAXqL96dTQ4UubFQZPjgKheODowy1K8u9kSiThNo4mNGKPmUp6bSWiOsA8AnCcmAHv1Gogw+TOUnDRUplCRVQzcpCG0NwB+oaRDvYLrxdfItRkzHjmRmvzgOzpKcTmUDmSDZqP84WPe9fvfAgyfNredoLnqXqdeqbgqjctmV1ZM6Kup/NBIwfHfYxwZ/P0iytH1MAgSme6nXJ+Xf2DNt68uDEqb8/yVRQ==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1772902186; bh=MsPXDv/RK4nGOAf8xweqO1yyWLRzUztSrLJn50zpeEj=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=oizlyNv3Ove9j9+9CjIHAod2awQOuXsIZkebJZQ3YuODYsWNTsG32py7TvjSLB0UmbDCcbSu2fERDrAiHWKkOkLPGp3BefR6i4Xnu/rlfNgKLWWHU4vI57nPpuIvIbAQ4XIH4iqg6htvi+KrBdLPrtjV1iBVNIherddpZ+ynnPlESzzVeoTz923ioprfbt80yIiOG1pk9dnZOXfpF9nxIUdwyZ3hOTKlU6lhpmDMe+7B/IBiplb/mhIn7Nd8LHy8zPDhoIo/JhMk6udOJ8jE4UaO7N/qf/oz9MudvFai/Aun6sOF5m75IjRdDIW7TK4VjOCjT1XTe51emoW87QyLiQ==
+X-YMail-OSG: QwSwYbQVM1kfnEoMBd7gCMdLasaquPUxeyDih.YfEkHSCPKCKTv4ON11UEN8bx.
+ gbUe8g7UzJ58Va9po10SCIeIgVlBLlWLehyxEeIV1cfMT_NMTaFeNvBUqnUmuTuYkf56l7ofOTS5
+ _r6fus_GJBZzzKPOnh.2fiVbZ98aHeHkRbN_nQ6egq5G18Jz820GD7Bd3M_cK1Pr1AfXkDbJ9Wiz
+ TX0uYcreCLp2B2IJ.lsdagvlEJUZOVwlyl0Pzzxdef0MMsWVzZguowIp4T8mnLnZIWnIHvaOuoyr
+ jqqB1BGHk8lGIoLjfrRvQ79_9YGayWrTqR49KOx7WJMs79YZBwrgPgfZIowu6hFqz_HqMP2Ylzm6
+ .EkHb6CEz7qENlIoEupEXamALGeNwtqp7.OcOw6r0gkp7ffcap7XnHPA9NzKFnr04uwg514Nza_q
+ bCxzxjuonxzwiC.rjXoXIxCBIUZa.wLMUQgroUKhkpToIqATvj4GNaYegrc61BewZwv1bSN9HHmW
+ _VaVpfzon9kiTpHiXOtYkuzbm0y1jFmesJu2g2oV3t2t3L9zgmxbUPSUPipUQU.pcLMiujVilTN.
+ 7gr_6eeu.JAUnPER.ILEPwxeyNtOKYFEyJqp0YCA0c97rvVdxuRnPuLU0ZcMuzqs0hk6zHLsmbzQ
+ XnyyOGK.e7OZrUJ5fepL64FCyt2DY5JnWgZRsIdCUpagvR.VAeqlv9rQbKC4K9iGb2ip8Edu40DK
+ I2ybJjl4Ix9ZxjncLxGnD.n5yC.kf_8oI9tQ4Yj64qtgGRxmdl652wTGF0NQ6pJ9L9.fnSY1USeB
+ eTlnaGw9NM_goSGalzfd7vwUJLhh1mud0iCq3pQ8sLp5OgtsniQXvND3sZ2ftNys87xGUv6jgXEl
+ r1AxCW9i4NR0nlkXv_LpI7OccnqAhPC4OpcbJ7JvrJDawpi9K2dJ.V2X8gczkohuEoD1TZhtqAvJ
+ AmU3NjXxK5MYQugY4Gq8rCXt64Gn4gI.evkNSqCSMywjYUJX4Xtnx77SM_..bIg0BiSWO37xbE63
+ cTFTu_H6cdNV2dXtiIIrXkVyaVZK8U.Os6SZXRW3PJfQoLUDnZrC6bR2EAfk8SG7d3jh9T8DRcME
+ h80dudGD2jXi2ajb_8IDVUnKgnKH9Vc6G2n8Zwvn6lmb7UwU4PRWoxFM3ieiJNQHbfKa8vsfdaJ8
+ JEl_fCm1U4yGqpsf5FH4s1E2lTxt_EvfT.Qg1sc7FKExqgFjTTjAcD2oC73gH9Gg3fmutRlmZMnT
+ l_S1KVSv9Y2i9Q_mF9sfBMC1uFUOG5go5L4wCzUvmcvBrml.S8UX58J1.Bt7mkzqjg76MRZvfXzO
+ G7TOmsxJM774AWOBMGKCYxeQG2sEPtTLzKBCflRTXQ6qvVjN3yzDoO3MlxRxjD2GWkYBDVYHMz66
+ B59uf2UmjSo_usjgl0BjvKweijJSVVmX_ACqjVa7Q4jNQQW35HMh3I45GsgUaLf_5uMZ5OhOOoIH
+ ENLoCKr9vYMP00vWmf7u6Q.pu_ZD5Nkf83hi31lsGyNGt0KahIw4QgIt4nUjEra9Umgc6z9XBn8i
+ inRQguMEjMkrpg2hJoZ0VlE7rvjHybBMppls8XIbQWx4qzwlXMTSd1IyAVWZNt_dRZxSm4iYyC7Z
+ f9_jjnVNyXIyyXyQvBtkRbDHVxXQiGK2N58vqeQz2YjFWPXsdUuzcGH82UweAtEddAbWxGtr6Wez
+ X32H0KVjzYTnC2oEAiGncLJB1TaEXk3WEXm.25o3HZcQymvXaE1F4fzKoZbHPsHBLiDVDwQZEHXM
+ Ym9Lpb20vRrl_LN7RSg6RUf42yHUlkuealVtfmKdCaS1TKDDTPuQL.MzsxcJtrbEro8vPNRVf1f1
+ LW0YKdPckftqv1iacXfnguDm5xhkV7jq5U6icW2IkEvJInOswyS2wFRUVN7m2U1ZVLI.jologF3m
+ 5.AaMQ77MbPnXa8109OpUEWAJJT9N.Ktx9ibZ14GYv66Vj2PGO2K..McOx0va9uzCNZB4sAispP8
+ outMb3i0nC6OzSFZZ4pEDFlDJr8GUcTvjLZ988svLGzJXK9TiG7wpahX41EAZJjcPzM4TldTt9yt
+ iDv7bzbb7gmUYZG9Q1mwfToZ_rHKl.WgIwRTe.ZRL03.FQMlNfpB4W85u9FshZkla.iLqdDFUDGc
+ C9fFpT.3OBinWD6HHSj6IWau.qXfRNUl3ngni9HgXNVDjUZnRp5HPtIHCRupUWkqUdqlKSMwFXU9
+ lT3X.3Kwr4FnHnefzjeTiCp3oUTfygvs8It_hiUin3_JUEZ2Fq_pkI6a7a.adRsBmtIDJXLcjoBh
+ veI9nY5c8nl4CCq.EOtTP2EY-
+X-Sonic-MF: <mdmacleod1@yahoo.co.uk>
+X-Sonic-ID: 5f77ed54-cbfa-4481-a408-1e09b7612f86
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic309.consmr.mail.ir2.yahoo.com with HTTP; Sat, 7 Mar 2026 16:49:46 +0000
+Date: Sat, 7 Mar 2026 16:49:44 +0000 (UTC)
+From: Malcolm Macleod <mdmacleod1@yahoo.co.uk>
+To: Will Kirby <williamgkirby@gmail.com>
+Cc: Lynne Lindner <lmlindner@aol.com>, Kirby Bryony <bryony.kirby@gmail.com>
+Message-ID: <613171519.9641487.1772902184205@mail.yahoo.com>
+In-Reply-To: <4B3AAED2-5BAC-45A8-99F4-02980F753A71@gmail.com>
+References: <1701533208.8865355.1767453213297.ref@mail.yahoo.com> <1701533208.8865355.1767453213297@mail.yahoo.com> <4B3AAED2-5BAC-45A8-99F4-02980F753A71@gmail.com>
+Subject: JLS website
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_9641486_79499254.1772902184203"
+X-Mailer: WebService/1.1.25198 YMailNovation
+Content-Length: 17343
+
+------=_Part_9641486_79499254.1772902184203
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+ Dear WillI'm sorry it has taken us so long to reply. But we're going to do=
+ as much as we can this weekend.
+First, regarding the image banner, we like the first one, with its suggesti=
+on of the Malvern Hills.
+Although Lynne wondered whether the colour scheme - at least for the "waves=
+" - could be some shade of green, we think perhaps we could save colour hig=
+hlights for some future time (e.g. Xmas)
+Regarding the sections,=C2=A0 I don't think we need=C2=A0'Join us' or =E2=
+=80=98education' and I assume that =E2=80=98news' would be covered within=
+=C2=A0home, events or "about".
+We're currently looking through the photos taken by Michael Whitefoot, the =
+professional photographer last year. Some are "group" photos (or subgroups)=
+. There are also individual photos of Lynne and the choir members. We plan =
+to send you them, with some notes that could be used to caption them.
+I will send you the poster for the coming concert, and from it=C2=A0 i'll s=
+end you the text for the ticket website, and the image of the QR code that =
+points to it, and also a list of future concerts
+Then the main thing for us to do is send you the copy you've asked for, whi=
+ch we will do pronto.
+Thank you so much.Best wishesMalcolm=C2=A0
+    On Saturday, 31 January 2026 at 18:43:11 GMT, Will Kirby <williamgkirby=
+@gmail.com> wrote: =20
+=20
+ Hello Lynne & Malcolm,
+I have started on the site, and have a few questions please.  =20
+   - Copy
+   - Look / Feel
+   - Sections
+
+These are discussed in more detail below. Once I get a steer on these I sho=
+uld be able to make a good structure for the site. To get to a final polish=
+ed product it would also be great to have some recordings (even if very sho=
+rt), and some more pics. I have the ones from the concert in Worcester - bu=
+t maybe some more informal ones from a rehearsal would complement these bes=
+t.
+Please do share any thoughts and i=E2=80=99ll push things on.
+Best,
+Will
+
+CopyDo you have any copy, or bumph about the choir from old programs or sim=
+ilar? I can use this for the =E2=80=98about=E2=80=99 / =E2=80=98history=E2=
+=80=99 sections.
+Look / feel.=C2=A0I have begun to mess about with designs / themes - but I=
+=E2=80=99m also keen for you to take the lead on the visuals. Are there any=
+ websites you rate highly? It doesn=E2=80=99t matter if they are for cars /=
+ companies / whatever; rather than music related. I=E2=80=99m keen to get a=
+ colour scheme and / or =E2=80=98feel=E2=80=99 (modern vs. trad, clean vs v=
+aried etc).
+=C2=A0Some initial ideas from me to show the kind of thing which is possibl=
+e are below. I haven=E2=80=99t focussed on the finer text and / or graphic =
+design - i=E2=80=99m just trying to get a sense of your taste and preferenc=
+es:
+https://williamgki.github.io/jls-website/index_waves_final.html=C2=A0- i th=
+ough the waves are a bit like sound waves, but also the malvern hillshttps:=
+//williamgki.github.io/jls-website/index_botanical.html=C2=A0- botanical, s=
+imilar theme to the logo
+https://williamgki.github.io/jls-website/index_nordic.html=C2=A0- a variant=
+ on the waves, but using more of the logo.
+
+Sections:I looked through some of the sites you mentioned, and others from =
+Bryony to see what they contain and have pasted the section titles below. I=
+n the drafts above i settled on: home, events & tickets, about the choir, l=
+isten, our ethos and support. let me know if you=E2=80=99d like more? 'Join=
+ us', =E2=80=98education', =E2=80=98news' are all options.=C2=A0
+  =20
+   - Tenebrae     =20
+      - About, Learning & Connection, News, Shop, Support
+
+   - Ex Cathedra     =20
+      - About us, Events, Education & Participation, Shop, Support, News & =
+Media, Work with us, Contact
+
+   - The Sixteen     =20
+      - About Us, What's On, Media / Shop, Support & Join, Education, Genes=
+is Sixteen
+
+   - Corra Sound     =20
+      - Home, Our Story, The Singers, Events, Workshops, Blog, Contact, Tes=
+timonials
+
+   - Voces8     =20
+      - Home, About, News, Concerts, Education, Contact, Shop
+
+
+
+
+On 3 Jan 2026, at 15:13, Malcolm Macleod <mdmacleod1@yahoo.co.uk> wrote:
+Dear WillSimilarly, these are Kate Hill's details. We've sung several piece=
+s by her.
+Both Liz and Kate are local - Liz in West Malvern, Kate now in Eastnor.=C2=
+=A0
+Best wishesMalcolm
+
+https://katehillcomposer.com
+
+
+
+ =20
+------=_Part_9641486_79499254.1772902184203
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><div class=3D"ydp789b771cyahoo-style-wrap" style=
+=3D"font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:13px=
+;"><div></div>
+        <div dir=3D"ltr" data-setdir=3D"false">Dear Will</div><div dir=3D"l=
+tr" data-setdir=3D"false">I'm sorry it has taken us so long to reply. But w=
+e're going to do as much as we can this weekend.</div><div dir=3D"ltr" data=
+-setdir=3D"false"><br></div><div dir=3D"ltr" data-setdir=3D"false">First, r=
+egarding the image banner, we like the first one, with its suggestion of th=
+e Malvern Hills.</div><div dir=3D"ltr" data-setdir=3D"false"><br></div><div=
+ dir=3D"ltr" data-setdir=3D"false">Although Lynne wondered whether the colo=
+ur scheme - at least for the "waves" - could be some shade of green, we thi=
+nk perhaps we could save colour highlights for some future time (e.g. Xmas)=
+</div><div dir=3D"ltr" data-setdir=3D"false"><br></div><div dir=3D"ltr" dat=
+a-setdir=3D"false">Regarding the sections,&nbsp; I don't think we need<span=
+><span style=3D"font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"=
+>&nbsp;'Join us' or =E2=80=98education' and I assume that =E2=80=98news' wo=
+uld be covered within&nbsp;<span><span style=3D"font-family: Helvetica Neue=
+, Helvetica, Arial, sans-serif;">home, events or "about".</span></span></sp=
+an></span></div><div dir=3D"ltr" data-setdir=3D"false"><span><span style=3D=
+"font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"><span><span st=
+yle=3D"font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"><br></sp=
+an></span></span></span></div><div dir=3D"ltr" data-setdir=3D"false"><span>=
+<span style=3D"font-family: Helvetica Neue, Helvetica, Arial, sans-serif;">=
+<span><span style=3D"font-family: Helvetica Neue, Helvetica, Arial, sans-se=
+rif;">We're currently looking through the photos taken by Michael Whitefoot=
+, the professional photographer last year. Some are "group" photos (or subg=
+roups). There are also individual photos of Lynne and the choir members. We=
+ plan to send you them, with some notes that could be used to caption them.=
+</span></span></span></span></div><div dir=3D"ltr" data-setdir=3D"false"><s=
+pan><span style=3D"font-family: Helvetica Neue, Helvetica, Arial, sans-seri=
+f;"><span><span style=3D"font-family: Helvetica Neue, Helvetica, Arial, san=
+s-serif;"><br></span></span></span></span></div><div dir=3D"ltr" data-setdi=
+r=3D"false"><span><span style=3D"font-family: Helvetica Neue, Helvetica, Ar=
+ial, sans-serif;"><span><span style=3D"font-family: Helvetica Neue, Helveti=
+ca, Arial, sans-serif;">I will send you the poster for the coming concert, =
+and from it&nbsp; i'll send you the text for the ticket website, and the im=
+age of the QR code that points to it, and also a list of future concerts</s=
+pan></span></span></span></div><div dir=3D"ltr" data-setdir=3D"false"><span=
+><span style=3D"font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"=
+><span><span style=3D"font-family: Helvetica Neue, Helvetica, Arial, sans-s=
+erif;"><br></span></span></span></span></div><div dir=3D"ltr" data-setdir=
+=3D"false"><span><span style=3D"font-family: Helvetica Neue, Helvetica, Ari=
+al, sans-serif;"><span><span style=3D"font-family: Helvetica Neue, Helvetic=
+a, Arial, sans-serif;">Then the main thing for us to do is send you the cop=
+y you've asked for, which we will do pronto.</span></span></span></span></d=
+iv><div dir=3D"ltr" data-setdir=3D"false"><span><span style=3D"font-family:=
+ Helvetica Neue, Helvetica, Arial, sans-serif;"><span><span style=3D"font-f=
+amily: Helvetica Neue, Helvetica, Arial, sans-serif;"><br></span></span></s=
+pan></span></div><div dir=3D"ltr" data-setdir=3D"false"><span><span style=
+=3D"font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"><span><span=
+ style=3D"font-family: Helvetica Neue, Helvetica, Arial, sans-serif;">Thank=
+ you so much.</span></span></span></span></div><div dir=3D"ltr" data-setdir=
+=3D"false"><span><span style=3D"font-family: Helvetica Neue, Helvetica, Ari=
+al, sans-serif;"><span><span style=3D"font-family: Helvetica Neue, Helvetic=
+a, Arial, sans-serif;">Best wishes</span></span></span></span></div><div di=
+r=3D"ltr" data-setdir=3D"false"><span><span style=3D"font-family: Helvetica=
+ Neue, Helvetica, Arial, sans-serif;"><span><span style=3D"font-family: Hel=
+vetica Neue, Helvetica, Arial, sans-serif;">Malcolm&nbsp;</span></span></sp=
+an></span></div><div><br></div>
+       =20
+        </div><div id=3D"ydpca6c7a2dyahoo_quoted_3630237122" class=3D"ydpca=
+6c7a2dyahoo_quoted">
+            <div style=3D"font-family:'Helvetica Neue', Helvetica, Arial, s=
+ans-serif;font-size:13px;">
+               =20
+                <div>
+                    On Saturday, 31 January 2026 at 18:43:11 GMT, Will Kirb=
+y &lt;williamgkirby@gmail.com&gt; wrote:
+                </div>
+                <div><br></div>
+                <div><br></div>
+                <div><div id=3D"ydpca6c7a2dyiv5940794105"><div>Hello Lynne =
+&amp; Malcolm,<div><br clear=3D"none"></div><div>I have started on the site=
+, and have a few questions please.</div><div><ol class=3D"ydpca6c7a2dyiv594=
+0794105MailOutline"><li>Copy</li><li>Look / Feel</li><li>Sections</li></ol>=
+</div><div><br clear=3D"none"></div><div>These are discussed in more detail=
+ below. Once I get a steer on these I should be able to make a good structu=
+re for the site. To get to a final polished product it would also be great =
+to have some recordings (even if very short), and some more pics. I have th=
+e ones from the concert in Worcester - but maybe some more informal ones fr=
+om a rehearsal would complement these best.</div><div><br clear=3D"none"></=
+div><div>Please do share any thoughts and i=E2=80=99ll push things on.</div=
+><div><br clear=3D"none"></div><div>Best,</div><div><br clear=3D"none"></di=
+v><div>Will</div><div><br clear=3D"none"></div><div><br clear=3D"none"></di=
+v><div><b>Copy</b></div><div>Do you have any copy, or bumph about the choir=
+ from old programs or similar? I can use this for the =E2=80=98about=E2=80=
+=99 / =E2=80=98history=E2=80=99 sections.</div><div><br clear=3D"none"></di=
+v><div><b>Look / feel</b>.&nbsp;</div><div>I have begun to mess about with =
+designs / themes - but I=E2=80=99m also keen for you to take the lead on th=
+e visuals. Are there any websites you rate highly? It doesn=E2=80=99t matte=
+r if they are for cars / companies / whatever; rather than music related. I=
+=E2=80=99m keen to get a colour scheme and / or =E2=80=98feel=E2=80=99 (mod=
+ern vs. trad, clean vs varied etc).</div><div><br clear=3D"none"></div><div=
+>&nbsp;Some initial ideas from me to show the kind of thing which is possib=
+le are below. I haven=E2=80=99t focussed on the finer text and / or graphic=
+ design - i=E2=80=99m just trying to get a sense of your taste and preferen=
+ces:</div><div><br clear=3D"none"></div><div><a shape=3D"rect" href=3D"http=
+s://williamgki.github.io/jls-website/index_waves_final.html" rel=3D"nofollo=
+w" target=3D"_blank">https://williamgki.github.io/jls-website/index_waves_f=
+inal.html</a>&nbsp;- i though the waves are a bit like sound waves, but als=
+o the malvern hills</div><div><a shape=3D"rect" href=3D"https://williamgki.=
+github.io/jls-website/index_botanical.html" rel=3D"nofollow" target=3D"_bla=
+nk">https://williamgki.github.io/jls-website/index_botanical.html</a>&nbsp;=
+- botanical, similar theme to the logo<br clear=3D"none"></div><div><a shap=
+e=3D"rect" href=3D"https://williamgki.github.io/jls-website/index_nordic.ht=
+ml" rel=3D"nofollow" target=3D"_blank">https://williamgki.github.io/jls-web=
+site/index_nordic.html</a>&nbsp;- a variant on the waves, but using more of=
+ the logo.<br clear=3D"none"></div><div><br clear=3D"none"></div><div><b>Se=
+ctions</b>:</div><div>I looked through some of the sites you mentioned, and=
+ others from Bryony to see what they contain and have pasted the section ti=
+tles below. In the drafts above i settled on: home, events &amp; tickets, a=
+bout the choir, listen, our ethos and support. let me know if you=E2=80=99d=
+ like more? 'Join us', =E2=80=98education', =E2=80=98news' are all options.=
+&nbsp;</div><div><br clear=3D"none"></div><div><ul><li class=3D"ydpca6c7a2d=
+yiv5940794105whitespace-normal ydpca6c7a2dyiv5940794105break-words ydpca6c7=
+a2dyiv5940794105pl-2"><strong>Tenebrae</strong><ul><li class=3D"ydpca6c7a2d=
+yiv5940794105whitespace-normal ydpca6c7a2dyiv5940794105break-words ydpca6c7=
+a2dyiv5940794105pl-2">About, Learning &amp; Connection, News, Shop, Support=
+</li></ul></li><li class=3D"ydpca6c7a2dyiv5940794105whitespace-normal ydpca=
+6c7a2dyiv5940794105break-words ydpca6c7a2dyiv5940794105pl-2"><strong>Ex Cat=
+hedra</strong><ul><li class=3D"ydpca6c7a2dyiv5940794105whitespace-normal yd=
+pca6c7a2dyiv5940794105break-words ydpca6c7a2dyiv5940794105pl-2">About us, E=
+vents, Education &amp; Participation, Shop, Support, News &amp; Media, Work=
+ with us, Contact</li></ul></li><li class=3D"ydpca6c7a2dyiv5940794105whites=
+pace-normal ydpca6c7a2dyiv5940794105break-words ydpca6c7a2dyiv5940794105pl-=
+2"><strong>The Sixteen</strong><ul><li class=3D"ydpca6c7a2dyiv5940794105whi=
+tespace-normal ydpca6c7a2dyiv5940794105break-words ydpca6c7a2dyiv5940794105=
+pl-2">About Us, What's On, Media / Shop, Support &amp; Join, Education, Gen=
+esis Sixteen</li></ul></li><li class=3D"ydpca6c7a2dyiv5940794105whitespace-=
+normal ydpca6c7a2dyiv5940794105break-words ydpca6c7a2dyiv5940794105pl-2"><s=
+trong>Corra Sound</strong><ul><li class=3D"ydpca6c7a2dyiv5940794105whitespa=
+ce-normal ydpca6c7a2dyiv5940794105break-words ydpca6c7a2dyiv5940794105pl-2"=
+>Home, Our Story, The Singers, Events, Workshops, Blog, Contact, Testimonia=
+ls</li></ul></li><li class=3D"ydpca6c7a2dyiv5940794105whitespace-normal ydp=
+ca6c7a2dyiv5940794105break-words ydpca6c7a2dyiv5940794105pl-2"><strong>Voce=
+s8</strong><ul><li class=3D"ydpca6c7a2dyiv5940794105whitespace-normal ydpca=
+6c7a2dyiv5940794105break-words ydpca6c7a2dyiv5940794105pl-2">Home, About, N=
+ews, Concerts, Education, Contact, Shop</li></ul></li></ul></div><div><br c=
+lear=3D"none"></div><div id=3D"ydpca6c7a2dyiv5940794105yqt51860" class=3D"y=
+dpca6c7a2dyiv5940794105yqt1562685818"><div><div><br clear=3D"none"><blockqu=
+ote type=3D"cite"><div>On 3 Jan 2026, at 15:13, Malcolm Macleod &lt;mdmacle=
+od1@yahoo.co.uk&gt; wrote:</div><br clear=3D"none" class=3D"ydpca6c7a2dyiv5=
+940794105Apple-interchange-newline"><div><div><div style=3D"font-family:Hel=
+vetica Neue, Helvetica, Arial, sans-serif;font-size:13px;" class=3D"ydpca6c=
+7a2dyiv5940794105yahoo-style-wrap"><div dir=3D"ltr">Dear Will</div><div dir=
+=3D"ltr">Similarly, these are Kate Hill's details. We've sung several piece=
+s by her.</div><div dir=3D"ltr"><br clear=3D"none"></div><div dir=3D"ltr">B=
+oth Liz and Kate are local - Liz in West Malvern, Kate now in Eastnor.&nbsp=
+;</div><div dir=3D"ltr"><br clear=3D"none"></div><div dir=3D"ltr">Best wish=
+es</div><div dir=3D"ltr">Malcolm</div><div dir=3D"ltr"><br clear=3D"none"><=
+/div><div dir=3D"ltr"><span><a shape=3D"rect" href=3D"https://katehillcompo=
+ser.com/" style=3D"margin:0px;padding:0px;border:0px;font-stretch:inherit;l=
+ine-height:inherit;font-family:DuckSansProduct, -apple-system, BlinkMacSyst=
+emFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Arial, sans-serif;font-size=
+-adjust:inherit;font-size:14.4px;vertical-align:baseline;color:rgb(63, 110,=
+ 53);letter-spacing:0.2px;" class=3D"ydpca6c7a2dyiv5940794105ydp3011542Rn_J=
+XVtoPVAFyGkcaXyK ydpca6c7a2dyiv5940794105ydp3011542VkOimy54PtIClAT3GMbr" re=
+l=3D"nofollow" target=3D"_blank"><div style=3D"margin:0px;padding:0px;borde=
+r:0px;font-style:inherit;font-weight:inherit;font-stretch:inherit;line-heig=
+ht:inherit;font-family:inherit;font-size-adjust:inherit;vertical-align:base=
+line;width:176.083px;" class=3D"ydpca6c7a2dyiv5940794105ydp3011542xS2NxE06p=
+IznLuh2xjH0"><p style=3D"margin:1.5px 0px 0px;padding:0px;border:0px;font-s=
+tretch:inherit;line-height:1.23077;font-size-adjust:inherit;font-size:13.37=
+14px;vertical-align:baseline;text-decoration-line:underline;" class=3D"ydpc=
+a6c7a2dyiv5940794105ydp3011542veU5I0hFkgFGOPhX2RBE ydpca6c7a2dyiv5940794105=
+ydp3011542wZ4JdaHxSAhGy1HoNVja ydpca6c7a2dyiv5940794105ydp3011542AlPVsxUsFt=
+3bnuOvg6hI"><span style=3D"margin:0px;padding:0px;border:0px;font-style:inh=
+erit;font-weight:inherit;font-stretch:inherit;line-height:1;font-family:inh=
+erit;font-size-adjust:inherit;vertical-align:baseline;color:rgb(102, 102, 1=
+02);" class=3D"ydpca6c7a2dyiv5940794105ydp3011542Wo6ZAEmESLNUuWBkbMxx">http=
+s://katehillcomposer.com</span></p></div></a></span><br clear=3D"none"></di=
+v></div></div></div></blockquote></div><br clear=3D"none"></div></div></div=
+></div></div>
+            </div>
+        </div></body></html>
+------=_Part_9641486_79499254.1772902184203--

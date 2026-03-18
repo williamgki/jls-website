@@ -1,0 +1,116 @@
+Delivered-To: williamgkirby@gmail.com
+Received: by 2002:a05:7110:6451:b0:2f4:5a2b:4d93 with SMTP id b17csp757493gee;
+        Sun, 8 Mar 2026 09:31:53 -0700 (PDT)
+X-Received: by 2002:a05:6000:290d:b0:439:c2ce:1208 with SMTP id ffacd0b85a97d-439da3484d3mr15347838f8f.5.1772987513759;
+        Sun, 08 Mar 2026 09:31:53 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1772987513; cv=none;
+        d=google.com; s=arc-20240605;
+        b=d7z28iL+kA7AFZVca5b40wkvQ5NmHkzRSVsRnurlMqb/Tu27yQt1xNLoFCYQC2/nNA
+         SGu9BCzzz1pGz+qtoCh1yUBHAwj2KN7h2dGD+mUGfn8XBZBXix2YnFXAPMWL/E8i2ro1
+         tzsaQRWmYahO2A6O1i3E9g/HPROZC9x1fm3d3A8QZNREx7KgI7NiXUTsTlaLPk3NKSDC
+         kfxr4shKguFzuU4gIidTRKXAs520sBVxQF5kQIXbnaj5a0axZYl9F5OkAg2kjMTSMhVw
+         VXglhY3WgBbw+V5WzVSfB5lfH+Eu7OmHfMUGk2i0h6Hq5jOCWAbWHt7zIWUGGl39Hf4q
+         9NEA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=references:mime-version:subject:message-id:to:from:date
+         :dkim-signature;
+        bh=gG/g7wsrpYBbqp8oVvIyqBmLJRDaoTgStpWDDNXt0Mo=;
+        fh=KAi+xsPZ1nXx0r1pOeuOSWXIsdUiDECq9fu/OzBi5QI=;
+        b=Ap/TbTNTRlAA8qQCEFGI4s5aY2yJN53v29XCxG96bVplyrvVR0xsDqomKRP+dVy9nU
+         Fe0TPJPBC2fUcOlygQf6rZnFEP78v5TE8KRmkBo4r8Ag6Ymf4i41aiJa6WYNXyzdWykg
+         tUIFX7LUuYCUlarRQJGOynKYngB5Ct7u2gEDVCzNG6q5AkcyBohdudUX6x/ew7Zwa0kb
+         /RoZ6IAMDOeaw7bKc50hXv8gVxFNeZSLotY5QVJ4iTd8jLLgFPboYCDOFXh5BcKRfsVn
+         FtySDRu3GZt68AmkE//AjbCwSMqPeTUGD8cBDKR0Gv/zqhI2w/Je/DuBseNnIQmBELpR
+         cmsw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@yahoo.co.uk header.s=s2048 header.b=X2sJT46v;
+       spf=pass (google.com: domain of mdmacleod1@yahoo.co.uk designates 77.238.179.110 as permitted sender) smtp.mailfrom=mdmacleod1@yahoo.co.uk;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.co.uk
+Return-Path: <mdmacleod1@yahoo.co.uk>
+Received: from sonic309-52.consmr.mail.ir2.yahoo.com (sonic309-52.consmr.mail.ir2.yahoo.com. [77.238.179.110])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-439dadc18e1si13204929f8f.397.2026.03.08.09.31.53
+        for <williamgkirby@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 08 Mar 2026 09:31:53 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mdmacleod1@yahoo.co.uk designates 77.238.179.110 as permitted sender) client-ip=77.238.179.110;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@yahoo.co.uk header.s=s2048 header.b=X2sJT46v;
+       spf=pass (google.com: domain of mdmacleod1@yahoo.co.uk designates 77.238.179.110 as permitted sender) smtp.mailfrom=mdmacleod1@yahoo.co.uk;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.co.uk
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.co.uk; s=s2048; t=1772987513; bh=gG/g7wsrpYBbqp8oVvIyqBmLJRDaoTgStpWDDNXt0Mo=; h=Date:From:To:Subject:References:From:Subject:Reply-To; b=X2sJT46vjnnDh0UYYs5rLLcmWpcflfI6GK9u3hKQuLrFQJqPW/q9clhq7KtSU8S0sYDf7GaqqVTYXf21BE1dieDxWPHial05fb2SOQcAriHJ0BshDnpz6hVADRL63qpj/AdxgmYa1YPbD7WCv0jQ9BqpknLcn2taeWl/2jxLdMnN92nwGvUNNmSdD6ykTKNa6LRNcBq4qzIP6rij5URp6hvh8HcWf89JMt122Ooz8ICeZ3VAaWORvEaiIstIJ2qJoDCR3eXEe61u3Fy+CGOoJQpLxO9NpycAbPWTf4tcA/eryaUGiec1B4W3MkBpHz5Gx6WzZPT7xW6od/aF1LTClQ==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1772987513; bh=bIzrTP3681GXg23htJBOLaT39RfuTMOX/2noFiqB2cH=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=IkzrVQ6CxEllpfbTbGP7XwLG/vnknjA3T/UXaVzE2B+OaVxvQErvZyDtnmomsFRL/XFAFgAhH29Oul+CsPHUirF88J1pgrOfeCKOhp1FPL3f8pb3DPnVyfz0flNfI6LdhLeYrdMvnKdUJqFneZmEhlkx++YZxgeAZdCc/+SnG4GcuDREoHeSgdVc7SiDFkZdCEvzjhzJhhftz8dkvyN/af23yvdkgJREy/1M/p2j1UGt2Ezhk+1hSYZa1jUGjiYSNrwiAHmY4Awh15OdsVfo18/EmLkHOjmFMSHb7NBKuLfldNmRRlGljCrQz747eY0tRbp7L0vgUOSxn7TCkDyjgw==
+X-YMail-OSG: 1bwHvM8VM1mCtMHrZi5DQkS_ng_DakpRacNqG6Y5.lOYcMySa5YMG2sUme.7tRz
+ 2vPMTMMK.JFQofUJAQHeYiQeb3I7psJSdlLLVBVahCTjpZkdS90dkAC4V.c9EofX_C7Cgb0E71h7
+ 0d_GIHBQdJwAbXDgdoadi6B6NWKGtjVYSxbxIECITHxU82TLJ5X9Uup4QHWPJCVHb.qH02mZuGfJ
+ LXWGI1ueDi4t1SJiy5g9w.VT.6ePxpwrq2qziMr95R6Rx0gj8dAyBHR03q8KLu2oHTeIOC3G4Dca
+ 5iUu6z_QXJ_6ktzLvr5_B5LoxXAajx_vl9Tsm3LIpRwceYn512KaFMebPgyRdPbL8.QfIuUzcCDT
+ J0kOiY5pObSMON6tfsPJP_e59f9wA8nHBvzuFehR1s7DasWlNBfS1MV3du.6vGh7xONeUw.5DA4Y
+ gAfIeU_7obxByMOotGx0ub3qj5ANV37Vq_LmbskFsxcNZuFuJefl16ayYl8wNMTUd388b460Vcn9
+ fotzr3c6NNPnpTB5MOvG9gpXQ5L5l4kW5eh1wtCoDuTUwboqNsL6OolJe9Ig0ffpMQM7XDqbM3IZ
+ CET7Nw.fecpQn3AAkQGv6tW6FFD5OJlyvnbT7hFQd8qMLkvGWR6ILNGFYdQOuiIU1BvwWWflTIeD
+ nH.856bGKs9bu.5keidjsrecqXLu_BJY.f1w1s.sjvAz9htqhmfnDxyv7BrfpbZgKqrVxKYd.a7M
+ 2xfAsZ3sZAQxdQBPdDtt5i2JNhFvjfkrRhduwo6rOIzKU0K3J7lPd6EoibnkBDC57hYxYyHeiFpp
+ YA2pnp_lcntRiJRnMR1IRzm9UMQOYv9.wqn3gTpPPOon9aXOp237qeZ66RL007eAafWLFWuyZc6S
+ DmMJvNxa4WdzfjMsq_YfnRTSs2HLZ32UUz9LhBBCShzV5HxGampxRkPP3KwldjQbKCDonzBDHgcn
+ uw2xbMw8bt.ixtf_Yu5qfivewKoJEkvdCTwL815c6_mzjyLD_qFAxj448XwltUvgVe5dBHIDJoMY
+ 4s_hYrglRwaUxB1FVrfVlBRdWyLbz06bUk0pGUGo_IwcANCpXC600.U4CGNbLbYdfV5DONiEzwK5
+ xrsyHHiF2alpTxCXauP8dbwic7ZRfiz4z6J6lPIDGFnxVHvnqICaZ4YtNNU5Ze_AlQ8yEXzowx2B
+ g5k6wPx5m4h77vWpvXM.LsCXX9OE.o0NSD5mll6UzkO6f0neCXLuc8bxZaz2WCGLy4kepVDSTjB9
+ TuAkiNB7UQ9VgbUZ5QwXPigR.wYbx5HX2O8C4ywSI9aSlLJEFNVZlANxbJIoQNnSrKPrjOqqgXmW
+ GpLKOA1QzmJavdGlmFKB5Wt3HAwkm80u4auP8l7fREkQFVw3wKXYecBrtRbQUBGMwFeHCJwL5uRJ
+ 3Ldl6ruQnbfZLIQk3mCyGk_aNJ0o2qrXj7qRGK5sUgOPQomdq9p.qgEDV8H5KYFrQF.TPhLfufND
+ SrIs_pUaPayyFGuHOO8Qb5jKSm73TEOpN58ZX87coCAVbHVbcOYg_oCZl4Hg2nkgJm2_iw7.PoMo
+ CHvrdycKuFnPerSToHKMpgXfBsH5LnRWp.CaWkm24OAyurZdL0jqFzUX2E4Hd54YCUaBkG4bbNuP
+ nGHm7mbKa.xMoJaLDveBNmge23dzKtOEmUFa3fTe.1TrBwsTA5NJGVPLy2ODiCn5TO9naItbvdRn
+ Lr49kIPAocr2TdqB91fQsP_c9VIr0ELwLXYrsXVoo5iOXIX12kTYo284E8Fpem_UO0igHRzBiIru
+ QQkgpyzlehnjpDsTsDvEmIoVeTXGFTNDn9S_qyAGU3tkOa7qDLoZxlLpq.pz.Gv569itSj29fZwt
+ LjMFiORFq2k6xLEbg6n6v1MmSbOdCa1AWgBfecNA8b7gxtgZ5VxkKluTL37pDDwUFN31xaTB0BOl
+ nX.R8zQR6bnRRiTKkfq5pTC5bMcPc4N0UFFFzLzKS8AGpyYItmLX_iwgjigQIVufvtrQ3tbZGx2U
+ BrmjBK06f16UpZfXEVorAB5CUdBgCy_ABc0Kkg66cSYJdT5VJVmm1YfLijEmoULcwq_4MsqK3aBp
+ 07yNtYE0c29ZAGwdD3dVIunBLL6g7W3JO4lnd7E_3WsWvsb8.9_0Gk0.mWAPCatEHxqyNQd5BVa9
+ s6Huaa.8E8xJ6RCPHwiEL9w0jPms3L64qOkx5v.qhrdwNs2LfJcCjRMxjG0WwLKnBWtqVZ25xzqn
+ nkSww5um5VgdCAyaD8LPE7.6DmUVsONbMwaTPVFFcND573GdrdoZI8t_tIN5mXMEObt3PBFaggP5
+ f04zqZ.gnYuufzZEftPMpe9woK1JQjICgkU.CZFo-
+X-Sonic-MF: <mdmacleod1@yahoo.co.uk>
+X-Sonic-ID: 533e767f-e0be-4bab-b543-d48bf7b3105f
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic309.consmr.mail.ir2.yahoo.com with HTTP; Sun, 8 Mar 2026 16:31:53 +0000
+Date: Sun, 8 Mar 2026 16:29:52 +0000 (UTC)
+From: Malcolm Macleod <mdmacleod1@yahoo.co.uk>
+To: Will Kirby <williamgkirby@gmail.com>
+Message-ID: <1417054455.9910034.1772987392649@mail.yahoo.com>
+Subject: overall description of JLS
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_9910033_1094565181.1772987392649"
+References: <1417054455.9910034.1772987392649.ref@mail.yahoo.com>
+X-Mailer: WebService/1.1.25198 YMailNovation
+Content-Length: 2522
+
+------=_Part_9910033_1094565181.1772987392649
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Dear Will,I think this is a suitable overall description of the JLS. Does it seem OK to you?
+
+The JennyLind Singers is a groupof talented local female singers, some semi-professional, who are sensitive andpassionate performers. They present several concerts a year in which theyexplore new music, especially by women and local composers, including theaward-winning composers Liz Dilnot Johnson and Kate Hill.
+
+Under theleadership of conductor Lynne Lindner, this virtuosic female voice choircelebrates the legacy of soprano and friend of Edward Elgar, Jenny Lind, wholived in Malvern for the latter part of her life and was a well-knownbenefactor of education and the arts.
+Best wishesMalcolm
+------=_Part_9910033_1094565181.1772987392649
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html><head></head><body><div class="yahoo-style-wrap" style="font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:13px;"><div dir="ltr" data-setdir="false">Dear Will,</div><div dir="ltr" data-setdir="false">I think this is a suitable overall description of the JLS. Does it seem OK to you?</div><div dir="ltr" data-setdir="false"><br></div><div dir="ltr" data-setdir="false"><div><p class="ydp269ac62cMsoNormal"><b><span style="font-size:12.0pt;mso-bidi-font-family:Aptos;mso-bidi-theme-font:minor-latin;color:black;mso-font-kerning:0pt">The Jenny
+Lind Singers</span></b><span style="font-size:12.0pt;mso-bidi-font-family:Aptos;mso-bidi-theme-font:minor-latin;color:black;mso-font-kerning:0pt"> is a group
+of talented local female singers, some semi-professional, who are sensitive and
+passionate performers. They present several concerts a year in which they
+explore new music, especially by women and local composers, including the
+award-winning composers Liz Dilnot Johnson and Kate Hill.</span></p>
+
+<p class="ydp269ac62cMsoNormal"><span style="font-size:12.0pt;mso-bidi-font-family:Aptos;mso-bidi-theme-font:minor-latin;color:black;mso-font-kerning:0pt">Under the
+leadership of conductor Lynne Lindner, this virtuosic female voice choir
+celebrates the legacy of soprano and friend of Edward Elgar, Jenny Lind, who
+lived in Malvern for the latter part of her life and was a well-known
+benefactor of education and the arts.</span></p></div>Best wishes</div><div dir="ltr" data-setdir="false">Malcolm</div></div></body></html>
+------=_Part_9910033_1094565181.1772987392649--

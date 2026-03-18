@@ -1,0 +1,169 @@
+Delivered-To: williamgkirby@gmail.com
+Received: by 2002:a05:7110:6451:b0:2f4:5a2b:4d93 with SMTP id b17csp761726gee;
+        Sun, 8 Mar 2026 09:43:27 -0700 (PDT)
+X-Received: by 2002:a05:600c:4447:b0:485:34b3:8587 with SMTP id 5b1f17b1804b1-48534b38969mr51250995e9.10.1772988206880;
+        Sun, 08 Mar 2026 09:43:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1772988206; cv=none;
+        d=google.com; s=arc-20240605;
+        b=EhPT8AMf0vQrx1MBBP65SEQw3eY3gjjMGHP/xr+wQCjyW1Ia38Wxe9ZAziya1uyw/a
+         RDRColnY7zWF38+ARbEWwg2EtTWFv+oE9wy14QoivMgfngeFKtTKoNvlHwqC+p9d5agl
+         hMYX0fof/ITzBxTUJlbyeIPJ3O9W2tHSI7XuQ/9wFUnd2j21Hd2Fwmy5GMZzzUAh1BRG
+         /kLx7276ShXSrfWQm4+a8D2rRH8o6HwYXnWJlxjeanbg9XDoSDlSc0D5HEM8dZoLqO5C
+         TAjUOFZNSwGew+2AG9cUKig+uGa52qxVSd+K3FKTgtztiAyInXGA4rJLi2dz4eV5pBZw
+         SaWw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=references:mime-version:subject:message-id:cc:to:from:date
+         :dkim-signature;
+        bh=tdoQAJJ07q3FzMjePmcD+I6BqPW5fnbLt449SpfkNkc=;
+        fh=emnrsaaJjB3x2Ro2QBXJh8vothgLTMtsWF4bylwLjCs=;
+        b=WqmoW/MZxX3qRtHiQAG8RJ4hplcLGgdK8O9v+9wjKUzywKagnkEo+9UN9IokaPMbSU
+         q+mzXVieOyogV0/p0HeAxdSopowJQdOktgcST0cYLwOfo77327WRYx1jByfg7idStjh+
+         XluCpfHdybZYPt0NjFpCF4b+vFQ7Y7o9oUArbtsXB2L3wX7NtLeKkz140WFOvEVvszkW
+         SiyL7iIijQEp/eSTfbNS/C8FBkgCwwK8JbdLIlO2HtsQn19CBji5SPb14qF1wnjprKIN
+         B22JuXKb96kTkqVv1N/AC5tsY/h1/CbpXWMBV8xH0NpULHzm6B70ppbY3hyFB08NFcs1
+         s2CA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@yahoo.co.uk header.s=s2048 header.b="So/xrnJV";
+       spf=pass (google.com: domain of mdmacleod1@yahoo.co.uk designates 77.238.178.228 as permitted sender) smtp.mailfrom=mdmacleod1@yahoo.co.uk;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.co.uk
+Return-Path: <mdmacleod1@yahoo.co.uk>
+Received: from sonic303-47.consmr.mail.ir2.yahoo.com (sonic303-47.consmr.mail.ir2.yahoo.com. [77.238.178.228])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-439dadc1420si14003377f8f.393.2026.03.08.09.43.26
+        for <williamgkirby@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 08 Mar 2026 09:43:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mdmacleod1@yahoo.co.uk designates 77.238.178.228 as permitted sender) client-ip=77.238.178.228;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@yahoo.co.uk header.s=s2048 header.b="So/xrnJV";
+       spf=pass (google.com: domain of mdmacleod1@yahoo.co.uk designates 77.238.178.228 as permitted sender) smtp.mailfrom=mdmacleod1@yahoo.co.uk;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.co.uk
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.co.uk; s=s2048; t=1772988206; bh=tdoQAJJ07q3FzMjePmcD+I6BqPW5fnbLt449SpfkNkc=; h=Date:From:To:Cc:Subject:References:From:Subject:Reply-To; b=So/xrnJVgp7YUUPImstdyYGryjMzN86nhZxahmaGM5fQrwnwkaNtKZx/jKefpCeKDFo+tFsLa6xUpa/jtxwlXhA+vEqGQg61gkg9P+5l6r1aIuVSCTg/JYdlvDzfkO/rbp7Z2Oxxah8a8TsEYXjoSS8wG1gJhhN7YHMZt6cmR3W+9RZ+BGdJQ/OzVmmyACea0nXxc3tvV0D8WvEdDq3MQvH+CR5+QmxDrkbJmxtyQGbjTri/cnAoWf4yoPCd90d8amhYjUKyyL/eLcnzse9JeaDY2onyCT12kbteb9u62746jP+qqVH3fpIyfffdwVi0pU9DDIHAIWOIh3IKGIvy3Q==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1772988206; bh=YhsQJqYCh2cbhqqkyqSOp8UsRk8AaqZ40ScnwxZh+JX=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=VJ9y0PnhUnpGmRgY4PX2A5KtOV34ViSw/Nhh9piuuKMxfMgSj033wRsyImUfLmzQ3DWFAs9/yBbZzLxu2qra8LW2u4KVxYDgLSNwuBg2yT/I3C4xVo0KJuI4JonE4YD9MV0cIZC0vjFK7DULHiduqS4hqK3D41oZcfQPKdBkplYwNyRpF3y7sbdBi8YsuYPs2BiqCF6YP1tyzPO+DzfWDJ1RnF+YJ5BNgj5d1rb/vTbPaX4guuS1gsDtXNlTd9DRltHddnnm4KRjo0oan0clvJvzcpW1YjBzpgvQjyQKpizU1uQYSJaS+Qv9uHM8hRROqpTATyAiArjTOrbhxuEJ4Q==
+X-YMail-OSG: G10WGD8VM1mye7AVUpwZBg1Y4o12ggt5aJCZYaeaBY4ytCXgaJy8WC1RDpFEVfp
+ Veyh0AEPTmBn1EUKOpiuDM9_dYID.Fwu.VpYQdDvTVfa..gUbIs4q0AyiMeZU7bwQY5YtqW4mhMt
+ bc4X5kmoT9ZcSHKq4H8BLVE49RxH67T4q4iWPa5TOKXg5POH3MyCVuRWMD83v_1n5SzXiNt9fpFP
+ Z5velmFmwwqyaMbleNgAM9j1aBzlvotoU.EsuYpNkfBv2WomlznRyT5OzaYPFcU4uHMRYZgioJP6
+ .ClKNNbkwpn2EsWG1VaGJ1f0UpeY29ntlSwKlhgynr__OTEL5mJhg7t429LPoCAQPFCOrDzSVPBA
+ Z7aieyUgvMC96VkHY.R4cmNoEA6wYPT.8W0jYdhqWvyqmLOoaA0c5ndISwQ3giLGc4qYx72Yzseq
+ poFq2eTPA_.CLayE_.aBj4jYJNnacmWR786HQI38jeLqOhqnZTVpbtjOwBTHNRl3NUXBGcjxn5Wl
+ _sE5sJF3diF5Fg_9A9f7P5qrgDhjq_dzutJKlSR0nKPCxg9xampGhAqvP3CiT.st7fRCewCEPe5V
+ AU_ZPsEOof.VMDLdVK8BTHM9s282oehGSMXiM6akF2l7lOmNm7h..K.bC608OwM3nDfGg45r1m2I
+ M6pz6e7RPOBB1FXI69QC0WEVKPf7DDFrtT1scRJoJtrPP.zH5ugMxGECrGwJjIrRbIJzToeLGc0i
+ lxhjzV79FXQxLfIqL3LpgUPRNWOjAWsxjW9s_fXLeRkwWa9RDN3UxtsWtUxy0IiWLanYPcoT8BP3
+ lRV_Mma74OtpHVFGWTFRG3JqfElkrk4W2rNGFbn336DV0mPb_BRoDidBOvkTvW_tCf0csa5xG_eS
+ hf0FS4LGGb59e21.lIpTtccjM2aZefkm9gqA0DSDPDYPHLIx_yNlgZrs.powO5k_hZ7dWRrKJnIJ
+ 3n.GqQQD8gnac9a8b1dfSnY6HKyLpKsT5tmXPeDDhLzgiiUV1ZCJfsqzus9jgiVdse79h.mu0dtT
+ e_u_0_73_qsWfk3r_nE2ifXMJUZOnPrj5GOK6lh5ahhy2ZXcIkmZBHfe5Cr5pydHnoe9IPtnHGec
+ JyRmUExnXAmeadvzr.2A0fV4RXWrAv2cMSFJbVI2EUTG_82MT1.omqSKjrXs.BHZQNXDr8.nGH0v
+ NV0UKeLv0FDl6Yz6KVcsMn072DEWTX4FybO6krDNUMnkxY48r1DHACXjg0zEOmYwI9mFGKjwOPya
+ S46X200mQ.xT5.i94xcrF3lYnU9PJyNLUQo31JT1K0MnirrY.XP.jBgaSlHrHQ3wx2OQFpl8m1Wc
+ ePSgP.0XpE64yfTj1MJTB5pEu4ovHzm4dYid90aCH0L8ZSw3JyQYBeM_hcROmIjhc93jEQkzog1q
+ stFsqJCJR1gmWz2qVGDaeNPaIUVEybJt2BozoBGldDhsWMe949Bu.6Ay92LIw7suskq6w0aT7ule
+ PvJ8EzuG0G.vvi7DUaAVkk9zS7gnrme3G7XQB9HU3t6VU3AzhBBdweZ6tSLQ9DkUtPZYJzRoCq6o
+ ftP8e.GPfwwRZxZFv7dUazsZY.K15JuBe5mdnSwvrp218iaF_Zbxrn_k.QE4rfRtk85lZ6it.7lm
+ BdbFGo.o0.K4g7_0BmtS6LN7208miHa0AuW7138S941IqDlnskISLA.5NZjcfA.fJ5QZ1yF9_KpX
+ bX8fGO7KrJMfqn4GX5cDOeOVJtsyW6Ty8JQk5oG57mmX9S1oXFlgzuFZwn49ehfMm9wx_z5GA_O3
+ arHpp.O4B1T2J22HpG6PJlOwto9yooZ8IsxDQ9Idn96_2WCfqQ7BrZihneOUxqkbbfmTiUWcLghN
+ J6czrPhN7RhMsuVDv9wAbJN1P4I7Vr1XfSoEG7q04ZbGmBs40MDC2vEMV4wPMXVFGLTK37OBV8Il
+ .JxXlBm05FYidbpZtCSIIt0I62xKnLi8O3__r3.OaXBrAdelnxZo_b1S4WRfZiuxmhrYYG7QD6BZ
+ 10fR_a9YW8SctF5Z1b2zNOK9QJqOJoBJBKdLiww_tukmqDWktn8oQ.e4x68Nu9pEJiXxSB3_5p1w
+ pE.Ump4y93PqREaMupK2dgvWCzQod3X1KH24njcYFk5ZVpdiG404LbAhkc5K1X6pjQOZyLCQQ00X
+ DYLs57Jl2c7mMuQRNWu1XqwS1ksKqTIbV1La_QvYcv3ih3_oHgsR.vr99uO0cXG80kQO16l_n2Nh
+ WtQptUh.._5I3.PPW2iQCCwaiGZIfqR1.5VIq5nLX4P5YXrR3Or5tgEMCqOGcAwoBR5U7A16OwTf
+ Siyr4tLcNkcpC7A1OpCcvtOUV7lhUqxTBYJmpE6Vj7X8CCFeMxaQM7xI-
+X-Sonic-MF: <mdmacleod1@yahoo.co.uk>
+X-Sonic-ID: 8c9e94f3-8606-4984-b727-ef2d22279e1e
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic303.consmr.mail.ir2.yahoo.com with HTTP; Sun, 8 Mar 2026 16:43:26 +0000
+Date: Sun, 8 Mar 2026 16:41:24 +0000 (UTC)
+From: Malcolm Macleod <mdmacleod1@yahoo.co.uk>
+To: Will Kirby <williamgkirby@gmail.com>
+Cc: Lynne Lindner <lmlindner@aol.com>
+Message-ID: <2021188399.3183399.1772988084718@mail.yahoo.com>
+Subject: History of the JLS
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3183398_325310527.1772988084717"
+References: <2021188399.3183399.1772988084718.ref@mail.yahoo.com>
+X-Mailer: WebService/1.1.25198 YMailNovation
+Content-Length: 3897
+
+------=_Part_3183398_325310527.1772988084717
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+History ofthe JLS
+The original Jenny Lind Singers were founded in 1970 at Malvern Girls' Coll=
+ege by their Head of Music, Eric Hemery, together with Elaine Hugh-Jones, a=
+ well-known localcomposer and teacher of music at MGC. Pieces were sung by =
+that group on arecord made by MGC in 1973, but they later ceased to exist.
+In 2013, atthe invitation of the Malvern Civic Society, the Jenny Lind Sing=
+ers werere-founded by Lynne Lindner, then the Director of Music at Malvern =
+St JamesGirls=E2=80=99 School, and initially comprised singers whom Lynne h=
+ad taught, some ofwhom were still at the school, while others had gone on t=
+o Music Colleges orUniversity.
+
+The group nowcomprises local adult female singers, many of them professiona=
+l orsemi-professional musicians, and with the continued participation in so=
+meconcerts, notably the group=E2=80=99s Christmas concerts, of trained sing=
+ers who arepast pupils of Lynne=E2=80=99s.
+
+The JLS are delighted to haveas their patron Countess Dr Inga Lewenhaupt, f=
+ormer Chair of the Jenny LindSociety of Sweden.
+
+Their regularaccompanist is local professional pianist Tim Sidford, and the=
+y have also beenaccompanied by harpists Nia Evans and Anwen Mai Thomas.
+
+
+------=_Part_3183398_325310527.1772988084717
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><div class=3D"yahoo-style-wrap" style=3D"font-fami=
+ly:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:13px;"><div dir=
+=3D"ltr" data-setdir=3D"false"><div><p class=3D"ydp2bbfb34aMsoNormal"><b><s=
+pan style=3D"font-size:12.0pt;mso-bidi-font-family:Aptos;mso-bidi-theme-fon=
+t:minor-latin;color:black;mso-font-kerning:0pt">History of
+the JLS</span></b></p>
+
+<div><span style=3D"font-size:12.0pt;mso-bidi-font-family:Aptos;mso-bidi-th=
+eme-font:minor-latin;color:black;mso-font-kerning:0pt">The original Jenny L=
+ind Singers were founded in 1970 at Malvern Girls' College by their Head of=
+ Music, Eric Hemery, together with Elaine Hugh-Jones, a well-known local
+composer and teacher of music at MGC. Pieces were sung by that group on a
+record made by MGC in 1973, but they later ceased to exist.</span></div>
+
+<p class=3D"ydp2bbfb34aMsoNormal"><span style=3D"font-size:12.0pt;mso-bidi-=
+font-family:Aptos;mso-bidi-theme-font:minor-latin;color:black;mso-font-kern=
+ing:0pt">In 2013, at
+the invitation of the Malvern Civic Society, the Jenny Lind Singers were
+re-founded by Lynne Lindner, then the Director of Music at Malvern St James
+Girls=E2=80=99 School, and initially comprised singers whom Lynne had taugh=
+t, some of
+whom were still at the school, while others had gone on to Music Colleges o=
+r
+University.</span></p>
+
+<p class=3D"ydp2bbfb34aMsoNormal"><span style=3D"font-size:12.0pt;mso-bidi-=
+font-family:Aptos;mso-bidi-theme-font:minor-latin;color:black;mso-font-kern=
+ing:0pt">The group now
+comprises local adult female singers, many of them professional or
+semi-professional musicians, and with the continued participation in some
+concerts, notably the group=E2=80=99s Christmas concerts, of trained singer=
+s who are
+past pupils of Lynne=E2=80=99s.</span></p>
+
+<p class=3D"ydp2bbfb34aMsoNormal"><span style=3D"font-size:12.0pt">The JLS =
+are delighted to have
+as their patron Countess Dr Inga Lewenhaupt, former Chair of the Jenny Lind
+Society of Sweden.</span></p>
+
+<p class=3D"ydp2bbfb34aMsoNormal"><span style=3D"font-size:12.0pt;mso-bidi-=
+font-family:Aptos;mso-bidi-theme-font:minor-latin;color:black;mso-font-kern=
+ing:0pt">Their regular
+accompanist is local professional pianist Tim Sidford, and they have also b=
+een
+accompanied by harpists Nia Evans and Anwen Mai Thomas.</span></p></div><br=
+></div></div></body></html>
+------=_Part_3183398_325310527.1772988084717--
