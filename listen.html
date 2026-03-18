@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen — The Jenny Lind Singers</title>
+    <meta name="description" content="Recordings and collaborating composers — Kate Hill and Liz Dilnot Johnson — championed by the Jenny Lind Singers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="JLS_logo.png" alt="The Jenny Lind Singers — Home" class="logo">
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events &amp; Tickets</a></li>
+                    <li><a href="about.html">About the Choir</a></li>
+                    <li><a href="listen.html">Listen</a></li>
+                    <li><a href="ethos.html">Our Ethos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-hero-content">
+            <h1>Listen</h1>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- Audio Player -->
+        <section id="audio" style="background: white;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 1rem;">Recordings</h2>
+                <p class="listen-intro">These recordings capture the Jenny Lind Singers in performance. The ensemble commissions and premieres new works; the pieces below represent recent programmes. Further recordings will be added as they become available.</p>
+                <div class="audio-player">
+                    <div class="track-list">
+                        <div class="track-item active" data-track="0" tabindex="0" role="button">
+                            <div class="track-title">Nimrod Reimagined</div>
+                            <div class="track-source">Liz Dilnot Johnson — World Premiere</div>
+                        </div>
+                        <div class="track-item" data-track="1" tabindex="0" role="button">
+                            <div class="track-title">Recording coming soon</div>
+                            <div class="track-source">More recordings to follow</div>
+                        </div>
+                    </div>
+                    <div class="audio-controls">
+                        <button class="play-btn" aria-label="Play">
+                            <div class="play-icon"></div>
+                            <div class="pause-icon"></div>
+                        </button>
+                        <div class="progress-container">
+                            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <div class="time-display">
+                                <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <audio id="audio-element">
+                        <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=" type="audio/wav">
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- Composers -->
+        <section>
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 1rem;">Collaborating Composers</h2>
+                <p class="listen-intro" style="margin-bottom: 4rem;">The Jenny Lind Singers actively champions the music of local women composers. We commission new works and perform them alongside repertoire from across the choral tradition.</p>
+
+                <!-- Kate Hill -->
+                <div class="composer-profile">
+                    <div class="composer-image-placeholder" aria-hidden="true">
+                        <img src="vign1.png" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+                    </div>
+                    <div>
+                        <h3 class="composer-name-heading">Kate Hill</h3>
+                        <p class="composer-location">Eastnor, Worcestershire</p>
+                        <p>Kate Hill is a composer whose work spans choral, chamber, and orchestral music. Based in Eastnor in the shadow of the Malvern Hills, her writing is distinguished by its lyrical clarity and deep sensitivity to text.</p>
+                        <p style="margin-top: 1rem;">The Jenny Lind Singers have performed several of her pieces, and the creative relationship continues to develop with each season.</p>
+                        <div class="composer-works">
+                            <h4>Performed by the Jenny Lind Singers</h4>
+                            <ul>
+                                <li>Selected works for female voices</li>
+                            </ul>
+                        </div>
+                        <a href="https://katehillcomposer.com" target="_blank" rel="noopener" class="composer-ext-link">Visit Kate Hill's website</a>
+                    </div>
+                </div>
+
+                <!-- Liz Dilnot Johnson -->
+                <div class="composer-profile composer-profile--reverse">
+                    <div class="composer-image-placeholder" aria-hidden="true">
+                        <img src="vign2.png" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+                    </div>
+                    <div>
+                        <span class="accolade-badge">IVORS Composer Awards Winner 2022</span>
+                        <h3 class="composer-name-heading">Liz Dilnot Johnson</h3>
+                        <p class="composer-location">West Malvern</p>
+                        <p>Liz Dilnot Johnson is one of Britain's most acclaimed choral composers. Her music is notable for its emotional directness and its ability to illuminate the full expressive range of the human voice.</p>
+                        <blockquote class="composer-quote">
+                            "Most impressive of all was Johnson's music, a composition of notable insight, beauty, and variety."
+                            <cite>— Church Times</cite>
+                        </blockquote>
+                        <div class="composer-works">
+                            <h4>Performed by the Jenny Lind Singers</h4>
+                            <ul>
+                                <li><em>Nimrod Reimagined</em> — World Premiere (commissioned by JLS)</li>
+                                <li>Selected choral works</li>
+                            </ul>
+                        </div>
+                        <a href="http://www.lizdilnotjohnson.co.uk" target="_blank" rel="noopener" class="composer-ext-link">Visit Liz Dilnot Johnson's website</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events &amp; Tickets</a></li>
+                    <li><a href="about.html">About the Choir</a></li>
+                    <li><a href="listen.html">Listen</a></li>
+                    <li><a href="ethos.html">Our Ethos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">© 2026 The Jenny&nbsp;Lind Singers. Founded 1970, re-founded 2013.</p>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+        const audio = document.getElementById('audio-element');
+        const playBtn = document.querySelector('.play-btn');
+        const progressBar = document.querySelector('.progress-bar');
+        const progressFill = document.querySelector('.progress-fill');
+        const currentTimeSpan = document.querySelector('.current-time');
+        const durationSpan = document.querySelector('.duration');
+        const trackItems = document.querySelectorAll('.track-item');
+        let currentTrack = 0;
+        const tracks = [
+            { title: 'Nimrod Reimagined', source: 'Liz Dilnot Johnson', url: 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=' },
+            { title: 'Recording coming soon', source: 'More recordings to follow', url: 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=' }
+        ];
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) { audio.play(); playBtn.classList.add('playing'); }
+            else { audio.pause(); playBtn.classList.remove('playing'); }
+        });
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressFill.style.width = progress + '%';
+                progressBar.setAttribute('aria-valuenow', progress);
+                currentTimeSpan.textContent = formatTime(audio.currentTime);
+            }
+        });
+        audio.addEventListener('loadedmetadata', () => { durationSpan.textContent = formatTime(audio.duration); });
+        progressBar.addEventListener('click', (e) => {
+            const rect = progressBar.getBoundingClientRect();
+            audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+        });
+        trackItems.forEach((item, index) => {
+            item.addEventListener('click', () => loadTrack(index));
+            item.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadTrack(index); } });
+        });
+        function loadTrack(index) {
+            currentTrack = index;
+            audio.src = tracks[index].url;
+            trackItems.forEach(item => item.classList.remove('active'));
+            trackItems[index].classList.add('active');
+            playBtn.classList.remove('playing');
+            progressFill.style.width = '0%';
+            currentTimeSpan.textContent = '0:00';
+        }
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return mins + ':' + (secs < 10 ? '0' : '') + secs;
+        }
+        audio.addEventListener('ended', () => { playBtn.classList.remove('playing'); progressFill.style.width = '0%'; audio.currentTime = 0; });
+    </script>
+</body>
+</html>

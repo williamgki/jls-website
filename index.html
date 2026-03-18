@@ -4,644 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Jenny Lind Singers</title>
+    <meta name="description" content="The Jenny Lind Singers — a virtuosic female voice choir celebrating women composers from the Malvern Hills.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 
-    <style>
-        /* ===== CSS Variables ===== */
-        :root {
-            --sage-green: #8B9D83;
-            --cream: #F5F3ED;
-            --lavender: #D4C9DB;
-            --text-dark: #2C2C2C;
-            --text-light: #5A5A5A;
-            --border-subtle: rgba(139, 157, 131, 0.2);
-        }
-
-        /* ===== Reset & Base Styles ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Lora', serif;
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background-color: var(--cream);
-        }
-
-        /* ===== Typography ===== */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'EB Garamond', serif;
-            font-weight: 400;
-            line-height: 1.3;
-        }
-
-        h1 {
-            font-size: 3.375rem; /* 54px */
-        }
-
-        h2 {
-            font-size: 2.125rem; /* 34px */
-        }
-
-        h3 {
-            font-size: 1.5rem; /* 24px */
-        }
-
-        a {
-            color: var(--sage-green);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* ===== Header Navigation ===== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(245, 243, 237, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            max-height: 80px;
-            width: auto;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            font-family: 'EB Garamond', serif;
-            font-size: 1rem;
-            color: var(--text-dark);
-        }
-
-        nav a:hover {
-            color: var(--sage-green);
-            text-decoration: none;
-        }
-
-        /* ===== Hero Section ===== */
-        #hero {
-            min-height: 70vh;
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-image: url('waves2.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 2rem;
-            margin-top: 82px; /* Account for fixed header */
-            position: relative;
-        }
-
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(245, 243, 237, 0.3);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
-
-        #hero h1 {
-            margin-bottom: 1rem;
-        }
-
-        #hero h2 {
-            font-weight: 300;
-            color: var(--text-light);
-        }
-
-        /* ===== Container ===== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 6rem 0;
-        }
-
-        /* ===== Next Concert Section ===== */
-        #next-concert {
-            text-align: center;
-        }
-
-        .concert-card {
-            max-width: 600px;
-            margin: 3rem auto 0;
-            padding: 3rem;
-            border: 1px solid var(--border-subtle);
-            background: white;
-        }
-
-        .concert-card h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .concert-details {
-            margin-bottom: 2rem;
-            color: var(--text-light);
-        }
-
-        .concert-details p {
-            margin: 0.5rem 0;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 14px 32px;
-            background-color: var(--sage-green);
-            color: var(--cream);
-            border: none;
-            border-radius: 2px;
-            font-family: 'EB Garamond', serif;
-            font-size: 1.125rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #7a8c73;
-            text-decoration: none;
-        }
-
-        /* ===== Audio Player Section ===== */
-        #audio {
-            background: white;
-            padding: 2.5rem 0;
-        }
-
-        #audio h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .audio-player {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .track-list {
-            margin-bottom: 2rem;
-        }
-
-        .track-item {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-subtle);
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .track-item:hover {
-            background-color: rgba(139, 157, 131, 0.05);
-        }
-
-        .track-item.active {
-            background-color: rgba(139, 157, 131, 0.1);
-        }
-
-        .track-title {
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .track-source {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            margin-top: 0.25rem;
-        }
-
-        .audio-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            border: 1px solid var(--border-subtle);
-        }
-
-        .play-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background-color: var(--sage-green);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transition: background-color 0.3s ease;
-        }
-
-        .play-btn:hover {
-            background-color: #7a8c73;
-        }
-
-        .play-icon, .pause-icon {
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
-
-        .play-icon {
-            border-width: 8px 0 8px 14px;
-            border-color: transparent transparent transparent var(--cream);
-            margin-left: 3px;
-        }
-
-        .pause-icon {
-            display: none;
-            width: 14px;
-            height: 16px;
-            border-left: 4px solid var(--cream);
-            border-right: 4px solid var(--cream);
-        }
-
-        .play-btn.playing .play-icon {
-            display: none;
-        }
-
-        .play-btn.playing .pause-icon {
-            display: block;
-        }
-
-        .progress-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 4px;
-            background-color: var(--border-subtle);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background-color: var(--sage-green);
-            width: 0%;
-            transition: width 0.1s linear;
-        }
-
-        .time-display {
-            font-size: 0.875rem;
-            color: var(--text-light);
-        }
-
-        /* ===== Social Proof Section ===== */
-        #reviews {
-            background: white;
-            padding: 2.5rem 0;
-        }
-
-        .reviews-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .review {
-            margin-bottom: 2rem;
-        }
-
-        .review:last-child {
-            margin-bottom: 0;
-        }
-
-        .review-text {
-            font-style: italic;
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .review-attribution {
-            text-align: right;
-            color: var(--text-light);
-            font-size: 0.9375rem;
-        }
-
-        .accolade {
-            text-align: center;
-            margin-top: 2rem;
-            color: var(--text-light);
-        }
-
-        /* ===== Ethos Section ===== */
-        #ethos {
-            text-align: center;
-        }
-
-        .ethos-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        #ethos h2 {
-            margin-bottom: 2rem;
-        }
-
-        #ethos p {
-            margin-bottom: 2rem;
-            font-size: 1.0625rem;
-            line-height: 1.8;
-        }
-
-        .ethos-link {
-            font-family: 'EB Garamond', serif;
-            font-size: 1.125rem;
-        }
-
-        .history-note {
-            margin-top: 3rem;
-            font-size: 0.9375rem;
-            color: var(--text-light);
-        }
-
-        /* ===== Composers Section ===== */
-        #composers {
-            background: white;
-        }
-
-        #composers h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .composers-intro {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-
-        .composers-list {
-            max-width: 600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .composer-link {
-            text-align: center;
-            padding: 2rem;
-            border: 1px solid var(--border-subtle);
-            transition: border-color 0.3s ease;
-        }
-
-        .composer-link:hover {
-            border-color: var(--sage-green);
-            text-decoration: none;
-        }
-
-        .composer-name {
-            font-family: 'EB Garamond', serif;
-            font-size: 1.25rem;
-            color: var(--text-dark);
-        }
-
-        /* ===== Mailing List Section ===== */
-        #mailing-list {
-            text-align: center;
-        }
-
-        #mailing-list h2 {
-            margin-bottom: 1rem;
-        }
-
-        .mailing-list-benefit {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-
-        .mailing-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.9375rem;
-        }
-
-        .form-group input[type="email"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-subtle);
-            border-radius: 2px;
-            font-family: 'Lora', serif;
-            font-size: 1rem;
-        }
-
-        .form-group input[type="email"]:focus {
-            outline: none;
-            border-color: var(--sage-green);
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            margin-top: 0.25rem;
-            flex-shrink: 0;
-        }
-
-        .checkbox-group label {
-            font-size: 0.875rem;
-            color: var(--text-light);
-        }
-
-        .btn-submit {
-            width: 100%;
-        }
-
-        /* ===== Footer ===== */
-        footer {
-            background: white;
-            border-top: 1px solid var(--border-subtle);
-            padding: 3rem 0;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .footer-nav {
-            margin-bottom: 2rem;
-        }
-
-        .footer-nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-nav a {
-            font-family: 'EB Garamond', serif;
-            color: var(--text-dark);
-        }
-
-        .copyright {
-            color: var(--text-light);
-            font-size: 0.875rem;
-        }
-
-        /* ===== Responsive Design ===== */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-
-            section {
-                padding: 4rem 0;
-            }
-
-            .concert-card {
-                padding: 2rem;
-            }
-
-            .composers-list {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-
-            .concert-card {
-                padding: 1.5rem;
-            }
-
-            section {
-                padding: 3rem 0;
-            }
-        }
-
-        /* ===== Focus States for Accessibility ===== */
-        a:focus, button:focus, input:focus {
-            outline: 2px solid var(--sage-green);
-            outline-offset: 2px;
-        }
-    </style>
 </head>
 <body>
     <!-- Header Navigation -->
     <header>
         <div class="header-content">
-            <img src="JLS_logo.png" alt="The Jenny Lind Singers" class="logo">
+            <a href="index.html">
+                <img src="JLS_logo.png" alt="The Jenny Lind Singers — Home" class="logo">
+            </a>
             <nav aria-label="Main navigation">
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#next-concert">Events & Tickets</a></li>
-                    <li><a href="#ethos">About the Choir</a></li>
-                    <li><a href="#audio">Listen</a></li>
-                    <li><a href="#ethos">Our Ethos</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events &amp; Tickets</a></li>
+                    <li><a href="about.html">About the Choir</a></li>
+                    <li><a href="listen.html">Listen</a></li>
+                    <li><a href="ethos.html">Our Ethos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
+
+    <main>
 
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
             <h1>The Jenny Lind Singers</h1>
-            <h2>Celebrating the works of women composers past and present</h2>
+            <p class="hero-subtitle">Celebrating the works of women composers past and present</p>
         </div>
     </section>
 
@@ -652,11 +53,12 @@
             <div class="concert-card">
                 <img src="extracted/poster.jpg" alt="Spring 2026 Concert Poster" style="max-width: 100%; height: auto; margin-bottom: 1.5rem;">
                 <a href="https://buytickets.at/jennylindsingers/2062690" target="_blank" rel="noopener" class="btn-primary">Book Tickets</a>
-                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-                    <p style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">Scan to book tickets:</p>
-                    <img src="extracted/qr-code.png" alt="QR Code for Ticket Booking" style="width: 150px; height: 150px; display: block; margin: 0 auto;">
+                <div class="qr-block">
+                    <p class="qr-label">Scan to book tickets:</p>
+                    <img src="extracted/qr-code.png" alt="QR Code for Ticket Booking" class="qr-code">
                 </div>
             </div>
+            <p class="also-coming-up">Also coming up: <a href="events.html">Elgar Festival · Stanbrook Abbey · Christmas at Great Malvern Priory →</a></p>
         </div>
     </section>
 
@@ -719,7 +121,7 @@
             <div class="ethos-content">
                 <h2>Our Ethos</h2>
                 <p>The Jenny Lind Singers is a group of talented local female singers, some semi-professional, who are sensitive and passionate performers. They present several concerts a year in which they explore new music, especially by women and local composers, including the award-winning composers Liz Dilnot Johnson and Kate Hill.</p>
-                <p style="margin-top: 1rem;">Under the leadership of conductor Lynne Lindner, this virtuosic female voice choir celebrates the legacy of soprano and friend of Edward Elgar, Jenny Lind, who lived in Malvern for the latter part of her life and was a well-known benefactor of education and the arts.</p>
+                <p class="ethos-second">Under the leadership of conductor Lynne Lindner, this virtuosic female voice choir celebrates the legacy of soprano and friend of Edward Elgar, Jenny Lind, who lived in Malvern for the latter part of her life and was a well-known benefactor of education and the arts.</p>
                 <p class="history-note">Founded 1970, Re-founded 2013</p>
             </div>
         </div>
@@ -762,23 +164,26 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="footer-content">
             <nav class="footer-nav" aria-label="Footer navigation">
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#next-concert">Events & Tickets</a></li>
-                    <li><a href="#ethos">About the Choir</a></li>
-                    <li><a href="#audio">Listen</a></li>
-                    <li><a href="#ethos">Our Ethos</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events &amp; Tickets</a></li>
+                    <li><a href="about.html">About the Choir</a></li>
+                    <li><a href="listen.html">Listen</a></li>
+                    <li><a href="ethos.html">Our Ethos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <p class="copyright">© 2026 Jenny Lind Singers. Founded 1970, Re-founded 2013.</p>
+            <p class="copyright">© 2026 The Jenny&nbsp;Lind Singers. Founded 1970, re-founded 2013.</p>
         </div>
     </footer>
 
+    <script src="nav.js"></script>
     <!-- JavaScript for Audio Player -->
     <script>
         // Audio player functionality

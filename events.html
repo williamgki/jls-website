@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events &amp; Tickets — The Jenny Lind Singers</title>
+    <meta name="description" content="Upcoming concerts by the Jenny Lind Singers — book tickets for our Spring 2026 concert and beyond.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="JLS_logo.png" alt="The Jenny Lind Singers — Home" class="logo">
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events &amp; Tickets</a></li>
+                    <li><a href="about.html">About the Choir</a></li>
+                    <li><a href="listen.html">Listen</a></li>
+                    <li><a href="ethos.html">Our Ethos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-hero-content">
+            <h1>Events &amp; Tickets</h1>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- Featured Next Concert -->
+        <section id="next-concert">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Next Concert</h2>
+                <div class="concert-card featured-concert">
+                    <img src="extracted/poster.jpg" alt="Spring 2026 Concert Poster" style="max-width: 100%; height: auto; margin-bottom: 1.5rem;">
+                    <a href="https://buytickets.at/jennylindsingers/2062690" target="_blank" rel="noopener" class="btn-primary">Book Tickets</a>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                        <p style="font-size: 0.875rem; color: var(--text-light);">Or scan to book:</p>
+                        <img src="extracted/qr-code.png" alt="QR Code — scan to book tickets" style="width: 150px; height: 150px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Concerts List -->
+        <section style="background: white;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Upcoming Concerts</h2>
+                <div class="events-list">
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="event-date-num">24</div>
+                            <div class="event-date-month">May</div>
+                            <div class="event-date-year">2026</div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Elgar Festival 2026</h3>
+                            <p class="event-venue">All Saints, Deansway, Worcester WR1 2JJ</p>
+                            <p class="event-desc">Sunday, 3pm. Back by popular demand, the Jenny Lind Singers return to the Elgar Festival with a programme celebrating the works of women composers past and present.</p>
+                        </div>
+                        <div class="event-cta">
+                            <a href="https://elgarfestival.org/events_2026/the-jenny-lind-singers/" target="_blank" rel="noopener" class="btn-secondary">Festival Programme</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="event-date-num">11</div>
+                            <div class="event-date-month">Oct</div>
+                            <div class="event-date-year">2026</div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Autumn in Malvern Festival</h3>
+                            <p class="event-venue">Stanbrook Abbey, Jennet Tree Lane, Callow End, Worcester WR2 4TY</p>
+                            <p class="event-desc">Sunday, 3pm. Part of the Autumn in Malvern Festival 2026 — an intimate concert in the magnificent surroundings of Stanbrook Abbey.</p>
+                        </div>
+                        <div class="event-cta">
+                            <a href="http://www.malvernfestival.co.uk/index.html?page=tickets" target="_blank" rel="noopener" class="btn-secondary">Reserve a Place</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="event-date-num">12</div>
+                            <div class="event-date-month">Dec</div>
+                            <div class="event-date-year">2026</div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Christmas Concert</h3>
+                            <p class="event-venue">Great Malvern Priory, Church Street, Malvern WR14 2AY</p>
+                            <p class="event-desc">Saturday, 3pm. A concert of music for Christmas including Benjamin Britten's <em>A Ceremony of Carols</em>. Ticketing details to follow.</p>
+                        </div>
+                        <div class="event-cta">
+                            <a href="contact.html" class="btn-secondary">Register Interest</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Performances -->
+        <section>
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Past Performances</h2>
+                <p class="past-performances" style="text-align: center;">The Jenny Lind Singers have performed at Great Malvern Priory, Worcester Cathedral, Stanbrook Abbey, and the Elgar Festival. If you would like to be notified of future concerts, <a href="index.html#mailing-list">join our mailing list</a>.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events &amp; Tickets</a></li>
+                    <li><a href="about.html">About the Choir</a></li>
+                    <li><a href="listen.html">Listen</a></li>
+                    <li><a href="ethos.html">Our Ethos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">© 2026 The Jenny&nbsp;Lind Singers. Founded 1970, re-founded 2013.</p>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+</body>
+</html>

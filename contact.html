@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiries — The Jenny Lind Singers</title>
+    <meta name="description" content="Get in touch with the Jenny Lind Singers — concert enquiries, press, or singing with us.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="JLS_logo.png" alt="The Jenny Lind Singers — Home" class="logo">
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events &amp; Tickets</a></li>
+                    <li><a href="about.html">About the Choir</a></li>
+                    <li><a href="listen.html">Listen</a></li>
+                    <li><a href="ethos.html">Our Ethos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-hero-content">
+            <h1>Enquiries</h1>
+        </div>
+    </div>
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="contact-grid">
+
+                    <!-- Enquiry Form -->
+                    <div>
+                        <span class="contact-form-label">Send us a message</span>
+                        <!-- Replace action="#" with your Formspree endpoint: https://formspree.io/f/{your-id} -->
+                        <form action="#" method="POST">
+                            <div class="form-row">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required autocomplete="name">
+                            </div>
+                            <div class="form-row">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required autocomplete="email">
+                            </div>
+                            <div class="form-row">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" class="form-select">
+                                    <option value="">Select a subject…</option>
+                                    <option value="concert-tickets">Concert tickets</option>
+                                    <option value="singing-enquiry">Singing enquiry</option>
+                                    <option value="press-media">Press &amp; media</option>
+                                    <option value="general">General enquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <div class="checkbox-group" style="margin-bottom: 1.5rem;">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent">I consent to the Jenny Lind Singers storing my details in order to respond to this enquiry.</label>
+                            </div>
+                            <button type="submit" class="btn-primary btn-submit">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Aside -->
+                    <div class="contact-aside">
+                        <h3>We'd be glad to hear from you</h3>
+                        <p>Whether you're planning to attend a concert, interested in singing with us, or have a press or media enquiry, please use the form to get in touch.</p>
+                        <p>For concert ticket bookings, you may also visit our <a href="events.html">Events &amp; Tickets</a> page directly.</p>
+
+                        <div class="contact-divider"></div>
+
+                        <h3>Stay in touch</h3>
+                        <p>Join our mailing list to receive concert announcements and news.</p>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="mailing-email">Email Address</label>
+                                <input type="email" id="mailing-email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="mailing-consent" name="consent" required>
+                                <label for="mailing-consent">I consent to receive concert announcements from the Jenny Lind Singers.</label>
+                            </div>
+                            <button type="submit" class="btn-primary btn-submit">Subscribe</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events &amp; Tickets</a></li>
+                    <li><a href="about.html">About the Choir</a></li>
+                    <li><a href="listen.html">Listen</a></li>
+                    <li><a href="ethos.html">Our Ethos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">© 2026 The Jenny&nbsp;Lind Singers. Founded 1970, re-founded 2013.</p>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+</body>
+</html>
