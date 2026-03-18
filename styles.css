@@ -267,6 +267,16 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 .patron-name { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--text-dark); margin-bottom: 0.5rem; }
 .patron-note { font-size: 0.9375rem; color: var(--text-light); }
 
+/* ===== Photography ===== */
+.profile-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: center top; display: block; margin: 0 auto 1.5rem; }
+.past-photo { max-width: 800px; margin: 0 auto 3rem; }
+.past-photo img { width: 100%; height: auto; display: block; }
+.past-photo figcaption { font-size: 0.8125rem; color: var(--text-light); text-align: right; margin-top: 0.5rem; font-style: italic; }
+.listen-photo { max-width: 700px; margin: 0 auto 2.5rem; }
+.listen-photo img { width: 100%; height: auto; display: block; }
+.ethos-photo { max-width: 500px; margin: 0 auto 3rem; }
+.ethos-photo img { width: 100%; height: auto; display: block; }
+
 /* ===== Timeline ===== */
 .timeline { position: relative; max-width: 680px; margin: 0 auto; padding-left: 0; }
 .timeline::before {
