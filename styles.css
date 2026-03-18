@@ -237,6 +237,13 @@ footer { background: white; border-top: 1px solid var(--border-subtle); padding:
 }
 .footer-nav a:hover { color: var(--sage-green); text-decoration: none; }
 .copyright { color: var(--text-light); font-size: 0.875rem; }
+.privacy-link { color: var(--text-light); font-size: 0.75rem; opacity: 0.6; margin-left: 0.75rem; }
+.privacy-link:hover { opacity: 1; text-decoration: underline; }
+.privacy-body { max-width: 680px; margin: 0 auto; }
+.privacy-body h2 { font-size: 1.375rem; margin: 2.5rem 0 0.75rem; }
+.privacy-body h3 { font-size: 1.125rem; margin: 1.5rem 0 0.5rem; color: var(--text-light); }
+.privacy-body p { margin-bottom: 1rem; }
+.privacy-updated { font-size: 0.875rem; color: var(--text-light); font-style: italic; margin-bottom: 2rem; }
 
 /* ===== Focus States ===== */
 a:focus, button:focus, input:focus, select:focus, textarea:focus {
