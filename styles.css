@@ -251,6 +251,8 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 .about-intro-grid img { width: 100%; height: auto; border: 1px solid var(--border-subtle); }
 .about-intro-text p { font-size: 1.0625rem; line-height: 1.8; margin-bottom: 1.5rem; }
 .people-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 800px; margin: 0 auto; }
+.people-grid--single { grid-template-columns: 1fr; max-width: 400px; }
+.accompanist-note { font-size: 0.875rem; color: var(--text-light); margin-top: 1rem; font-style: italic; }
 .profile-card { text-align: center; padding: 2rem; border: 1px solid var(--border-subtle); background: white; }
 .profile-initial {
     width: 80px; height: 80px; border-radius: 50%;
