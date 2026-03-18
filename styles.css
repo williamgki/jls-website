@@ -281,6 +281,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 .profile-photo-credit { font-size: 0.6875rem; color: var(--text-light); text-align: center; margin-bottom: 1.25rem; font-style: italic; }
 .past-photo { max-width: 800px; margin: 0 auto 3rem; }
 .past-photo img { width: 100%; height: auto; display: block; }
+.listen-coming-soon { text-align: center; font-family: 'EB Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--text-light); padding: 2rem 0 1rem; }
 .listen-photo { max-width: 700px; margin: 0 auto 2.5rem; }
 .listen-photo img { width: 100%; height: auto; display: block; }
 .ethos-photo { max-width: 500px; margin: 0 auto 3rem; }

@@ -42,7 +42,7 @@
 
     <main>
 
-        <!-- Audio Player -->
+        <!-- Recordings -->
         <section id="audio" style="background: white;">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 1rem;">Recordings</h2>
@@ -50,36 +50,7 @@
                     <img src="photos/ensemble-singing.jpg" alt="The Jenny Lind Singers in performance at the Elgar Festival 2025.">
                     <figcaption>© Michael Whitefoot &nbsp;·&nbsp; <span class="photo-handle">@whitefootimages</span></figcaption>
                 </figure>
-                <p class="listen-intro">These recordings capture the Jenny Lind Singers in performance. The ensemble commissions and premieres new works; the pieces below represent recent programmes. Further recordings will be added as they become available.</p>
-                <div class="audio-player">
-                    <div class="track-list">
-                        <div class="track-item active" data-track="0" tabindex="0" role="button">
-                            <div class="track-title">Nimrod Reimagined</div>
-                            <div class="track-source">Liz Dilnot Johnson — World Premiere</div>
-                        </div>
-                        <div class="track-item" data-track="1" tabindex="0" role="button">
-                            <div class="track-title">Recording coming soon</div>
-                            <div class="track-source">More recordings to follow</div>
-                        </div>
-                    </div>
-                    <div class="audio-controls">
-                        <button class="play-btn" aria-label="Play">
-                            <div class="play-icon"></div>
-                            <div class="pause-icon"></div>
-                        </button>
-                        <div class="progress-container">
-                            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                                <div class="progress-fill"></div>
-                            </div>
-                            <div class="time-display">
-                                <span class="current-time">0:00</span> / <span class="duration">0:00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <audio id="audio-element">
-                        <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=" type="audio/wav">
-                    </audio>
-                </div>
+                <p class="listen-coming-soon">Recordings coming soon.</p>
             </div>
         </section>
 
@@ -156,56 +127,5 @@
     </footer>
 
     <script src="nav.js"></script>
-    <script>
-        const audio = document.getElementById('audio-element');
-        const playBtn = document.querySelector('.play-btn');
-        const progressBar = document.querySelector('.progress-bar');
-        const progressFill = document.querySelector('.progress-fill');
-        const currentTimeSpan = document.querySelector('.current-time');
-        const durationSpan = document.querySelector('.duration');
-        const trackItems = document.querySelectorAll('.track-item');
-        let currentTrack = 0;
-        const tracks = [
-            { title: 'Nimrod Reimagined', source: 'Liz Dilnot Johnson', url: 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=' },
-            { title: 'Recording coming soon', source: 'More recordings to follow', url: 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=' }
-        ];
-        playBtn.addEventListener('click', () => {
-            if (audio.paused) { audio.play(); playBtn.classList.add('playing'); }
-            else { audio.pause(); playBtn.classList.remove('playing'); }
-        });
-        audio.addEventListener('timeupdate', () => {
-            if (audio.duration) {
-                const progress = (audio.currentTime / audio.duration) * 100;
-                progressFill.style.width = progress + '%';
-                progressBar.setAttribute('aria-valuenow', progress);
-                currentTimeSpan.textContent = formatTime(audio.currentTime);
-            }
-        });
-        audio.addEventListener('loadedmetadata', () => { durationSpan.textContent = formatTime(audio.duration); });
-        progressBar.addEventListener('click', (e) => {
-            const rect = progressBar.getBoundingClientRect();
-            audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
-        });
-        trackItems.forEach((item, index) => {
-            item.addEventListener('click', () => loadTrack(index));
-            item.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadTrack(index); } });
-        });
-        function loadTrack(index) {
-            currentTrack = index;
-            audio.src = tracks[index].url;
-            trackItems.forEach(item => item.classList.remove('active'));
-            trackItems[index].classList.add('active');
-            playBtn.classList.remove('playing');
-            progressFill.style.width = '0%';
-            currentTimeSpan.textContent = '0:00';
-        }
-        function formatTime(seconds) {
-            if (isNaN(seconds)) return '0:00';
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return mins + ':' + (secs < 10 ? '0' : '') + secs;
-        }
-        audio.addEventListener('ended', () => { playBtn.classList.remove('playing'); progressFill.style.width = '0%'; audio.currentTime = 0; });
-    </script>
 </body>
 </html>
