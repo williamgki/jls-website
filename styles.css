@@ -348,6 +348,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 }
 .event-announcement-content h3 { font-size: 2rem; margin-bottom: 0.5rem; }
 .event-announcement-content p { color: var(--text-light); margin-bottom: 1rem; }
+.event-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
 .event-meta {
     font-family: 'EB Garamond', serif;
     font-size: 1.125rem;
