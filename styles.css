@@ -346,6 +346,10 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     height: auto;
     display: block;
 }
+.event-stacked { text-align: center; }
+.event-stacked .event-poster { width: 100%; max-width: 480px; height: auto; display: block; margin: 0 auto 1.5rem; }
+.event-stacked .event-qr { width: 180px; height: auto; display: block; margin: 1.5rem auto; }
+.event-stacked a { overflow-wrap: anywhere; }
 .event-announcement-content h3 { font-size: 2rem; margin-bottom: 0.5rem; }
 .event-announcement-content p { color: var(--text-light); margin-bottom: 1rem; }
 .event-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
